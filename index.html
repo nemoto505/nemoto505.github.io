@@ -74,36 +74,36 @@ void main() {
 }
 `;
 
-// var image = new Image();
-// image.src = "leaves.jpg";  // MUST BE SAME DOMAIN!!!
-// image.crossOrigin = "anonymous";
-// image.onload = function() {
-//   render(image);
-// };
+var image = new Image();
+image.src = "leaves.jpg";  // MUST BE SAME DOMAIN!!!
+image.crossOrigin = "anonymous";
+image.onload = function() {
+  render(image);
+};
 
-// 1. 画像をBase64エンコードする
-function getImageAsBase64(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-        var reader = new FileReader();
-        reader.onloadend = function() {
-            callback(reader.result);
-        }
-        reader.readAsDataURL(xhr.response);
-    };
-    xhr.open('GET', url);
-    xhr.responseType = 'blob';
-    xhr.send();
-}
+// // 1. 画像をBase64エンコードする
+// function getImageAsBase64(url, callback) {
+//     var xhr = new XMLHttpRequest();
+//     xhr.onload = function() {
+//         var reader = new FileReader();
+//         reader.onloadend = function() {
+//             callback(reader.result);
+//         }
+//         reader.readAsDataURL(xhr.response);
+//     };
+//     xhr.open('GET', url);
+//     xhr.responseType = 'blob';
+//     xhr.send();
+// }
 
-// 2. Base64エンコードされたデータをData URL形式に変換する
-getImageAsBase64('leaves.jpg', function(base64String) {
-    var image = new Image();
-    image.src = base64String;
-    image.onload = function() {
-        render(image);
-    };
-});
+// // 2. Base64エンコードされたデータをData URL形式に変換する
+// getImageAsBase64('leaves.jpg', function(base64String) {
+//     var image = new Image();
+//     image.src = base64String;
+//     image.onload = function() {
+//         render(image);
+//     };
+// });
 
 function render(image) {
   // Get A WebGL context
