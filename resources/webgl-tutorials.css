@@ -18,7 +18,7 @@ canvas {
   border: 1px solid black;
   /* NOTE: This size is changed if in iframe - see below '.iframe canvas' */
   width: 400px;
-  height: 300px;
+  height: 600px;
   display: block;
 }
 
